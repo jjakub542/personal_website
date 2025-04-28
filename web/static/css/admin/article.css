@@ -1,0 +1,144 @@
+.article {
+  background-color: #fdfdfd;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: 'Consolas', monospace;
+  line-height: 1.7;
+  color: #333;
+}
+
+.article .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Headings */
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-weight: bold;
+  margin: 1.5em 0 0.5em;
+  line-height: 1.2;
+  color: #004d4d;
+}
+
+.article h1 { font-size: 2.4em; }
+.article h2 { font-size: 2em; }
+.article h3 { font-size: 1.6em; }
+.article h4 { font-size: 1.3em; }
+.article h5 { font-size: 1.1em; }
+.article h6 { font-size: 1em; color: #666; }
+
+/* Paragraphs */
+.article p {
+  margin-bottom: 1em;
+}
+
+/* Images */
+.article img {
+  display: block;
+  margin: 2em auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Blockquotes */
+.article blockquote {
+  border-left: 4px solid #00b8b8;
+  padding-left: 20px;
+  margin: 1.5em 0;
+  color: #555;
+  background: #f9f9f9;
+  font-style: italic;
+}
+
+/* Code blocks */
+.article pre code {
+  display: block;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.95em;
+  color: #1a1a1a;
+}
+
+/* Inline code */
+.article p code,
+.article li code {
+  background-color: #eef2f3;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  color: #005050;
+}
+
+/* Bold & italic */
+.article strong {
+  font-weight: bold;
+  color: #222;
+}
+
+.article em {
+  font-style: italic;
+  color: #444;
+}
+
+/* Lists (fix for Materialize) */
+.article ul,
+.article ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.article ul {
+  list-style-type: disc !important;
+}
+
+.article ol {
+  list-style-type: decimal !important;
+}
+
+.article li {
+  display: list-item !important;
+  margin-bottom: 0.4em;
+}
+
+/* Tables */
+.article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+}
+
+.article th,
+.article td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.article thead {
+  background-color: #00b8b8;
+  color: #fff;
+}
+
+/* Subscripts & Superscripts */
+.article sub,
+.article sup {
+  font-size: 0.8em;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.article sup {
+  top: -0.4em;
+}
+
+.article sub {
+  bottom: -0.2em;
+}

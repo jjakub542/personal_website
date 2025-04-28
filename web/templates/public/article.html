@@ -1,0 +1,35 @@
+{{ define "content" }}
+
+<section class="article">
+    <div class="container">
+      <div id="markdown-content">
+        <!-- markdown-it output will go here -->
+      </div>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js"></script>
+<script>
+
+    const title = "{{ .Article.Title }}"
+    const content = "{{ .Article.Content }}"
+
+    console.log(title, content)
+
+    const md = window.markdownit();
+
+    function renderMarkdown() {
+        const markdownText = `
+  # ${title}
+  ---------------
+  ${content}
+      `;
+      const htmlContent = md.render(markdownText);
+      document.getElementById('markdown-content').innerHTML = htmlContent;
+  }
+
+  renderMarkdown()
+</script>
+
+{{ end }} 

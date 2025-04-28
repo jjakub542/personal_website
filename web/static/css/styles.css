@@ -1,0 +1,250 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Fira Code', monospace;
+  color: #fff;
+  line-height: 1.6;
+  background: url('/static/img/me1.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  background-color: #000; /* Fallback color */
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+/* Header (Fixed Navbar) */
+header {
+  position: fixed; /* <-- CHANGED from absolute to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  padding: 40px 0;
+  background: rgba(0, 0, 0, 0.2); /* Slightly darker now */
+  backdrop-filter: blur(6px); /* Optional: you can remove if you really hate any blur */
+  text-align: center;
+  z-index: 1000; /* HIGH z-index to be always above everything */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Adjustments for the header content */
+header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 5px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #bfa2db;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #bfa2db;
+}
+
+/* Section Styles */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%,rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%); /* dimmed background */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+  height: 100vh;
+}
+
+/* About & Contact Specific Adjustments */
+.about, #contact {
+  padding-left: 55%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about h2, #contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content, .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+/* About Content */
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form button {
+  width: 30%;
+  padding: 12px;
+  background: rgba(217, 160, 218, 0.6);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #d0bce7;
+}
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Links General */
+a {
+  color: #bfa2db;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+      padding-top: 10px;
+      font-size: 1.5rem;
+  }
+
+  .hero h2 {
+      font-size: 2rem;
+  }
+
+  .hero p {
+      font-size: 1rem;
+  }
+
+  nav ul li {
+      display: block;
+      margin: 10px 0;
+  }
+
+  section {
+    background: rgba(0, 0, 0, 0.6); /* dimmed background */
+      padding: 60px 20px;
+
+  }
+
+  .about, #contact {
+      padding-bottom: 60%;
+      padding-left: 0;
+      align-items: center;
+      text-align: center;
+  }
+
+  .about-content p {
+      font-size: 1rem;
+  }
+
+  body {
+    background-size: 150%; /* Zoom background on mobile */
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-size: 150%;
+  }
+}

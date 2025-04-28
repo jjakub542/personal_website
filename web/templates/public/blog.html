@@ -1,0 +1,106 @@
+{{ define "content" }}
+
+<!-- Blog Section -->
+<section class="blog">
+  <div class="container">
+    <h1 id="header">Ostatnie wpisy na blogu</h1>
+
+    <div class="articles">
+
+      {{ range .Articles }}
+
+      <div class="article-card">
+        <img src="/static/uploads/{{ .CoverImageId }}.png" alt="Article Image">
+        <div class="article-content">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          <a href="/blog/{{ .Id }}" class="read-more">Przeczytaj</a>
+        </div>
+      </div>
+
+      {{ end }}
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination" style="margin-bottom: 93px;">
+    </div>
+  </div>
+</section>
+
+<script>
+  const pagination = document.getElementById("pagination")
+  const page = Number('{{ .page }}')
+  const articlesCount = Number('{{ .articlesCount }}')
+  const pagesCount = Number('{{ .pagesCount }}')
+
+  if (page === 1) {
+    pagination.innerHTML = `
+      <a class="pagination-button-current">1</a>
+      <a href="/blog?page=2" class="pagination-button-active">2</a>
+      <a href="/blog?page=3" class="pagination-button-active">3</a>
+      <a href="/blog?page=${pagesCount}" class="pagination-button-active" style="margin-left: 30px;">... ${pagesCount}</a>`
+  } else if (page === pagesCount) {
+    pagination.innerHTML = `
+      <a href="/blog?page=1" class="pagination-button-active" style="margin-right: 20px;">&#60;&#60;</a>
+      <a href="/blog?page=${page-2}" class="pagination-button-active">${page-2}</a>
+      <a href="/blog?page=${page-1}" class="pagination-button-active">${page-1}</a>
+      <a class="pagination-button-current">${page}</a>`
+  } else if (page + 1 === pagesCount) {
+    pagination.innerHTML = `
+      <a href="/blog?page=1" class="pagination-button-active" style="margin-right: 20px;">&#60;&#60;</a>
+      <a href="/blog?page=${page-2}" class="pagination-button-active">${page-2}</a>
+      <a href="/blog?page=${page-1}" class="pagination-button-active">${page-1}</a>
+      <a class="pagination-button-current">${page}</a>
+      <a href="/blog?page=${page+1}" class="pagination-button-active">${page+1}</a>
+      <a href="/blog?page=${pagesCount}" class="pagination-button-active" style="margin-left: 30px;">... ${pagesCount}</a>`
+  } else {
+    pagination.innerHTML = `
+      <a href="/blog?page=1" class="pagination-button-active" style="margin-right: 20px;">&#60;&#60;</a>
+      <a href="/blog?page=${page-1}" class="pagination-button-active">${page-1}</a>
+      <a class="pagination-button-current">${page}</a>
+      <a href="/blog?page=${page+1}" class="pagination-button-active">${page+1}</a>
+      <a href="/blog?page=${page+2}" class="pagination-button-active">${page+2}</a>
+      <a href="/blog?page=${pagesCount}" class="pagination-button-active" style="margin-left: 30px;">... ${pagesCount}</a>`
+  }
+
+  if (articlesCount === 0) {
+    pagination.innerHTML = ''
+    document.getElementById("header").innerText = "Brak artykułów"
+  }
+
+  if (pagesCount === 1) {
+    pagination.innerHTML = ''
+  }
+
+  if (pagesCount === 2 && page === 1) {
+    pagination.innerHTML = `<a class="pagination-button-current">1</a>
+      <a href="/blog?page=2" class="pagination-button-active">2</a>`
+  }
+
+  if (pagesCount === 2 && page === 2) {
+    pagination.innerHTML = `<a href="/blog?page=1" class="pagination-button-active">1</a>
+      <a class="pagination-button-current">2</a>`
+  }
+
+  if (pagesCount === 3 && page === 1) {
+    pagination.innerHTML = `<a class="pagination-button-current">1</a>
+      <a href="/blog?page=2" class="pagination-button-active">2</a>
+            <a href="/blog?page=3" class="pagination-button-active">3</a>`
+  }
+
+  if (pagesCount === 3 && page === 2) {
+    pagination.innerHTML = `<a href="/blog?page=1" class="pagination-button-active">1</a>
+      <a class="pagination-button-current">2</a>
+            <a href="/blog?page=3" class="pagination-button-active">3</a>`
+  }
+
+  if (pagesCount === 3 && page === 3) {
+    pagination.innerHTML = `<a href="/blog?page=1" class="pagination-button-active">1</a>
+      <a href="/blog?page=2" class="pagination-button-active">2</a>
+            <a class="pagination-button-current">3</a>`
+  }
+
+</script>
+
+{{ end }}

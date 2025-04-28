@@ -1,0 +1,72 @@
+{{ define "base.html" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>J. Jędra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jakub Jędra</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to My Website</h2>
+            <p>A place for thoughts, tech, and creativity.</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+          <h2>About Me</h2>
+          <div class="about-content">
+              <p>
+                  Hello, my name is Jakub. I live in Cracow - Poland, I'm a web developer and energy engineering student at AGH University of Technology. I’m also an amateur MMA fighter and chess enthusiast.
+              </p>
+          </div>
+      </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: jjakub542@gmail.com</p>
+            <p>Tel: +48 517 632 825</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jakub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      // Smooth scroll functionality
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
+  </script>
+</body>
+</html>
+
+{{ end }}

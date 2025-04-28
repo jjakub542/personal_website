@@ -1,0 +1,58 @@
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .message-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+  }
+  
+  .message-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .message-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .message-preview {
+    max-width: 70%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .message-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .message-actions button {
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  .delete-btn {
+    color: red;
+  }
+  
+  .delete-btn:hover {
+    opacity: 0.7;
+  }

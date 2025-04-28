@@ -1,0 +1,9 @@
+-- File: 20250423120000_init_schema.down.sql
+ALTER TABLE articles DROP CONSTRAINT IF EXISTS fk_cover_image;
+
+DROP TABLE IF EXISTS images;
+DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS users;
+
+DROP EXTENSION IF EXISTS "uuid-ossp";

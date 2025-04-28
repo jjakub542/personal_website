@@ -1,0 +1,162 @@
+{{ define "content" }}
+
+<!-- Sekcja Główna (Hero) -->
+<header class="hero" id="home">
+  <div class="hero-text animate-fade-slide">
+    <h1>Tworzymy strony, które budują zaufanie i wyróżniają Twoją markę na tle konkurencji</h1>
+    <p>Estetyczne, responsywne i dopasowane strony, które robią wrażenie i są przyjazne użytkownikom. Ponadto tworzymy aplikacje, które pomogą urosnąć Twojemu biznesowi.</p>
+    <div class="services-cta">
+      <a href="#services" class="cta-link">
+        <span>💻 Zobacz nasze usługi</span>
+      </a>
+    </div>
+    <br>
+    <br>
+    <p>
+      Masz pomysł na stronę, ale nie wiesz od czego zacząć?
+      Umów się na darmową konsultację — pomożemy dobrać odpowiednie rozwiązanie do Twoich potrzeb.
+    </p>
+    <div class="services-cta">
+      <a href="#contact" class="cta-link">
+        <span>💬 Skontaktuj się z nami</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+<section id="services">
+  <div class="container animate-scale-in">
+    <h2 class="section-title">💻 Nasze Usługi</h2>
+    <p class="section-subtitle">Wybierz pakiet dopasowany do Twoich potrzeb — od prostej wizytówki po rozbudowany system internetowy.</p>
+  
+    <div class="service-cards">
+  
+      <!-- Tier 1 -->
+      <div class="service-card">
+        <h3>Strona Wizytówkowa</h3>
+        <p>Idealna dla freelancerów i małych firm. Świetnie nadaje się jako strona „o mnie” lub prezentacja usług.
+          Zapewniamy wysoki wskaźnik SEO, dzięki któremu strona będzie wysoko pozycjonowana w wyszukiwarce.</p>
+        <p class="price">od 700 zł</p>
+      </div>
+  
+      <!-- Tier 2 -->
+      <div class="service-card">
+        <h3>Dynamiczna Strona Internetowa</h3>
+        <p>Blog lub newsletter z prostym panelem zarządzania to świetny sposób na budowanie zaufania i przyciąganie klientów.
+          Tworzymy szybki, lekki i dobrze zoptymalizowany system backendowy, który umożliwia łatwe dodawanie wpisów. Dzięki wpisom Twoja strona rośnie w wynikach wyszukiwania (SEO), a wartościowe treści przyciągają realnych odbiorców.
+          To idealne rozwiązanie, jeśli chcesz zacząć budować swoją markę i zdobywać klientów organicznie.
+        </p>
+        <p class="price">od 1300 zł</p>
+      </div>
+  
+      <!-- Tier 3 -->
+      <div class="service-card">
+        <h3>Serwis Internetowy Dla Twojego Biznesu</h3>
+        <p>
+          Projektujemy i wdrażamy kompleksowe rozwiązania takie jak sklepy internetowe, systemy rezerwacji czy platformy usługowe – z pełnym panelem administracyjnym do zarządzania treścią, użytkownikami i zamówieniami.
+          Zadbamy o płynne działanie serwisu, wydajny hosting oraz możliwość skalowania strony wraz z rozwojem Twojej firmy. To idealna opcja, jeśli szukasz solidnego fundamentu pod profesjonalny, rozwijający się biznes online.</p>
+        <p class="price">od 4100 zł</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Coś innego?</h3>
+        <p>Opowiedz nam o swoim projekcie – razem uczynimy go rzeczywistością. Wypełnij formularz poniżej, a odezwiemy się do Ciebie jak najszybciej!</p>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+<!-- Sekcja O nas -->
+<section class="about" id="about">
+  <div class="container animate-fade-up">
+    <h2 style="margin-right: 40px;">🥩 O nas</h2>
+    <p>Jesteśmy zespołem programistów z Krakowa, specjalizującym się w tworzeniu nowoczesnych i skutecznych rozwiązań webowych. Dzięki naszemu doświadczeniu i sprawnym procesom realizujemy projekty szybko, efektywnie i w rozsądnych cenach — bez kompromisów w jakości.
+    </p>
+      <p>
+      Nie korzystamy z gotowych szablonów – każda strona powstaje od podstaw i jest dopasowana do indywidualnych potrzeb klienta.
+    </p>
+    <p>
+    Skąd nazwa Fullsteak? To gra słów inspirowana terminem fullstack – cały proces powstawania aplikacji webowej od strony wizualnej (frontend) po zaplecze techniczne i bazy danych (backend).
+  </p>
+  <h2 style="margin-top: 60px;">Dlaczego FullSteak?</h2>
+  <div class="slogan">👉 Unikalny design, żadnych szablonów</div>
+  <div class="slogan">👉 Szybkość wykonania i jakość usług</div>
+  <div class="slogan">👉 Pełne wsparcie techniczne i utrzymanie produktu po wdrożeniu</div>
+  <div class="slogan">👉 Ceny dopasowane do Twoich realnych potrzeb</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container animate-scale-in">
+    <h2>Skontaktuj się z Nami</h2>
+
+    <p>📧 <strong>Email:</strong> <a href="mailto:kontakt@fullsteak.pl">kontakt@fullsteak.pl</a></p>
+    <p>📞 <strong>Telefon:</strong> <a href="tel:+48123456789">+48 123 456 789</a></p>
+    <br>
+    <p>Masz pytania? Pisz śmiało, odpowiemy na każde.</p>
+    <p>Napisz do nas lub zostaw wiadomość przez formularz poniżej.</p>
+    
+  <!-- Formularz -->
+  <form>
+    <input type="hidden" name="_csrf" value="{{ .CSRFToken }}">
+      <input type="text" name="name" placeholder="Twoje Imię" required>
+      <input type="email" name="email" placeholder="Twój Email" required>
+      <textarea placeholder="Twoja Wiadomość" name="message" rows="5" required></textarea>
+      <button type="submit" class="cta-button">
+        📩 Wyślij Wiadomość
+      </button>
+    </form>
+  </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const submitButton = form.querySelector("button");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // Stop the normal form submission
+
+    // Grab data from the form
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const csrfToken = form.querySelector('input[name="_csrf"]').value;
+
+    // Optional: disable button to prevent double submission
+    submitButton.disabled = true;
+    submitButton.textContent = "⏳ Wysyłanie...";
+
+    try {
+      const response = await fetch("/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || "Wystąpił błąd.");
+      }
+
+      // Optionally reset the form and show success
+      form.reset();
+      alert("✅ Wiadomość została wysłana!");
+    } catch (error) {
+      alert("❌ Błąd: " + error.message);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "📩 Wyślij Wiadomość";
+    }
+  });
+});
+</script>
+
+{{ end }}

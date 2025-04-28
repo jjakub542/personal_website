@@ -1,0 +1,55 @@
+{{ define "base.html" }}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+        <link rel="stylesheet" href="/static/css/admin/article.css">
+        <link rel="stylesheet" href="/static/css/admin/styles.css">
+        <link rel="stylesheet" href="/static/css/admin/messages.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Admin | FullSteak</title>
+    </head>   
+    <body>
+
+        <nav>
+            <div class="nav-wrapper black">
+                <a class="brand-logo center">Admin</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/admin/logout">Logout</a></li>
+                </ul>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="/admin">Home</a></li>
+                    <li><a href="/admin/messages">Messages</a></li>
+                    <li><a href="/admin/articles">Articles</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="divider"></div>
+
+        <ul class="sidenav black" style="width:100%;" id="mobile-demo">
+            <li><a style="color: white; text-align: center; margin-top: 80px; font-size: x-large;" href="/admin">Home</a></li>
+            <li><a style="color: white; text-align: center; margin-top: 20px; font-size: x-large;" href="/admin/messages">Messages</a></li>
+            <li><a style="color: white; text-align: center; margin-top: 20px; font-size: x-large;" href="/admin/articles">Articles</a></li>
+            <li><a style="color: white; text-align: center; margin-top: 20px; font-size: x-large;" href="/admin/logout">Logout</a></li>
+        </ul>
+
+
+        {{template "content" .}}
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const elems = document.querySelectorAll('.sidenav')
+                const instances = M.Sidenav.init(elems)
+            })
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
+
+{{ end }}
