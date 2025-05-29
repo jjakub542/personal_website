@@ -7,7 +7,7 @@ import (
 
 func main() {
 	server := app.NewServer()
-	fmt.Println("✅ Server is listening on port :8080")
+	fmt.Println("✅ Server is listening on port :8081")
 	err := server.ListenAndServe()
 	if err != nil {
 		panic(fmt.Sprintf("cannot start server: %s", err))

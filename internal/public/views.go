@@ -80,3 +80,11 @@ func (h *Handler) ContactUsPost(c echo.Context) error {
 	}
 	return c.Redirect(http.StatusSeeOther, "/#contact")
 }
+
+func (h *Handler) SimulationPage(c echo.Context) error {
+	csrfToken := c.Get("csrf").(string)
+	return c.Render(http.StatusOK, "simulation.html", map[string]interface{}{
+		"PageTitle": "Simulation",
+		"CSRFToken": csrfToken,
+	})
+}

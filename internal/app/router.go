@@ -35,6 +35,7 @@ func (s *Server) Router() http.Handler {
 	e.GET("/blog/:article_id", publicHandler.ArticleView)
 	e.POST("/send-message", publicHandler.ContactUsPost)
 	e.POST("/messages", contactHandler.MessageCreate)
+	e.GET("/simulation", publicHandler.SimulationPage)
 
 	adminGroup := e.Group("/admin")
 	adminGroup.GET("", user.AdminAuth(adminHandler.HomePage))
